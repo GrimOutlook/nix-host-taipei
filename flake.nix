@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
     nix-config = {
-      url = "path:/home/grim/nix-config";
+      url = "github:GrimOutlook/nix-config";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -15,8 +15,10 @@
     nix-config.inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         nix-config.modules.flake.hosts
+        nix-config.modules.flake.host-info
         (nix-config + "/modules/flake/systems.nix")
       ];
+      host-info.flake = "github:GrimOutlook/nix-host-taipei";
       host.taipei = {
         nixos = {
           modules = with nix-config.modules.nixos; [
