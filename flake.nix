@@ -11,7 +11,7 @@
   };
 
   outputs =
-    inputs@{ nix-config, ... }:
+    inputs@{ self, nix-config, ... }:
     nix-config.inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         nix-config.modules.flake.hosts
@@ -26,7 +26,7 @@
             wsl
           ];
           system = {
-            autoUpgrade.enable = false;
+            autoUpgrade.enable = true;
             stateVersion = "25.05";
           };
         };
