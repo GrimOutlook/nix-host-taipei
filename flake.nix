@@ -19,7 +19,8 @@
         (nix-config + "/modules/flake/systems.nix")
       ];
       host-info.flake = "github:GrimOutlook/nix-host-taipei";
-      host.taipei = {
+      host = {
+        name = "taipei";
         nixos = {
           modules = with nix-config.modules.nixos; [
             dev
