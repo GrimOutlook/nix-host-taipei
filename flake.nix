@@ -34,6 +34,7 @@
         home = {
           modules = with nix-config.modules.homeManager; [
             dev
+            networking
           ];
           home.stateVersion = "25.11";
         };
