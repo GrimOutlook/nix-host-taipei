@@ -16,7 +16,7 @@
       imports = [
         nix-config.modules.flake.hosts
         nix-config.modules.flake.host-info
-        (nix-config + "/modules/flake/systems.nix")
+        (nix-config + "/flakes/systems.nix")
       ];
 
       modules = [
