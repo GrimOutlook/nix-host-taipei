@@ -4,6 +4,8 @@ export NH_FLAKE := "github:GrimOutlook/nix-host-{{hostname}}"
 default:
   just --list
 
+us: update home
+
 alias switch := home
 
 home:
@@ -17,3 +19,6 @@ update:
 
 check:
   nix flake check
+
+check-local PATH="/home/grim/nix-config":
+  nix flake check --no-build --override-input nix-config path:{{PATH}}
