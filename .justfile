@@ -1,28 +1,32 @@
 hostname := "taipei"
 nix-config-local := "/home/grim/nix-config"
-export NH_FLAKE := "github:GrimOutlook/nix-host-{{hostname}}"
+nix-host-justfile-url := \
+  "https://raw.githubusercontent.com/GrimOutlook/nix-config/main/just/nix-host.just"
 
+# List recipes
 default:
   just --list
 
-us: update home
+import? ".just/nix-host.just"
 
-alias switch := home
-
-home *args="":
-  nh home switch . -c {{hostname}} {{args}}
-
-os:
-  nh os switch . -H {{hostname}}
-
-update:
-  nix flake update
-
-check:
-  nix flake check
-
-check-local PATH=nix-config-local:
-  nix flake check --no-build --override-input nix-config path:{{PATH}}
-
-switch-local PATH=nix-config-local:
-  just home -- --override-input nix-config path:{{PATH}}
+# Pull latest nix-host justfile from `nix-config` repo
+fetch:
+  #!/usr/bin/env bash
+  set -euo pipefail
+  just_host_path=".just/nix-host.just"
+  mkdir -p "$(dirname $just_host_path)"
+  tmp_path="$(mktemp)"
+  if [ -f "$just_host_path" ]; then
+    curl {{nix-host-justfile-url}} --output "$tmp_path"
+    difft --exit-code "$just_host_path" "$tmp_path" && {
+      echo '{{RED}}No changes to justfile found{{NORMAL}}'
+      exit 0
+    }
+  else
+    curl {{nix-host-justfile-url}} --output "$tmp_path" || {
+      echo "{{RED}}Failed to pull `nix-host.just`{{NORMAL}}"
+      exit 1
+    }
+  fi
+  echo "{{GREEN}}Found new justfile to use. Activating...{{NORMAL}}"
+  mv "$tmp_path" "$just_host_path"
