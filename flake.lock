@@ -270,11 +270,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1772263920,
-        "narHash": "sha256-b2SLx7q1qmq8Wy3JDEoFEqdWXHsMlsowHe0l2X26usA=",
+        "lastModified": 1772620436,
+        "narHash": "sha256-Y+BH5kL97L9mb4O9pxr88R+0zixipR/+bssGr3gbwgs=",
         "owner": "GrimOutlook",
         "repo": "nix-config",
-        "rev": "c96f5ff9142a7067ddfa47bc7e272635f60cd7a9",
+        "rev": "d04dc64a00ce8cf106617754e2b45419da11b39a",
         "type": "github"
       },
       "original": {
@@ -404,11 +404,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1772047000,
-        "narHash": "sha256-7DaQVv4R97cii/Qdfy4tmDZMB2xxtyIvNGSwXBBhSmo=",
+        "lastModified": 1772465433,
+        "narHash": "sha256-ywy9troNEfpgh0Ee+zaV1UTgU8kYBVKtvPSxh6clYGU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1267bb4920d0fc06ea916734c11b0bf004bbe17e",
+        "rev": "c581273b8d5bdf1c6ce7e0a54da9841e6a763913",
         "type": "github"
       },
       "original": {
