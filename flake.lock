@@ -245,6 +245,28 @@
         "type": "github"
       }
     },
+    "microvm": {
+      "inputs": {
+        "nixpkgs": [
+          "nix-config",
+          "nixpkgs"
+        ],
+        "spectrum": "spectrum"
+      },
+      "locked": {
+        "lastModified": 1772922713,
+        "narHash": "sha256-+dn2D7gNrrld3q/AapoZZ6HL8xnBS/pcV4Gye1Nfsg0=",
+        "owner": "microvm-nix",
+        "repo": "microvm.nix",
+        "rev": "6207a74a1ec31d3aa628cb98eb75795a10f49dea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "microvm-nix",
+        "repo": "microvm.nix",
+        "type": "github"
+      }
+    },
     "nix-config": {
       "inputs": {
         "agenix": "agenix",
@@ -255,6 +277,7 @@
         "home-manager": "home-manager_2",
         "import-tree": "import-tree",
         "karen-yank-nvim": "karen-yank-nvim",
+        "microvm": "microvm",
         "nix-index-database": "nix-index-database",
         "nixos-facter-modules": "nixos-facter-modules",
         "nixos-hardware": "nixos-hardware",
@@ -270,11 +293,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1772701810,
-        "narHash": "sha256-zbNQYRJFnocQtsXEDeaNLIJBZuHpZRT2osFm2iql1m4=",
+        "lastModified": 1773148484,
+        "narHash": "sha256-vNEOydfYEsnJ1UhPeg4FLrga0EA33f5vuD05ov2Fh0A=",
         "owner": "GrimOutlook",
         "repo": "nix-config",
-        "rev": "d114becd9c07e1f888e2f91decc5d6d606cfc3a9",
+        "rev": "228f3451e7855d9f998c61dc3e56d4e0f759f439",
         "type": "github"
       },
       "original": {
@@ -404,11 +427,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1772598333,
-        "narHash": "sha256-YaHht/C35INEX3DeJQNWjNaTcPjYmBwwjFJ2jdtr+5U=",
+        "lastModified": 1773068389,
+        "narHash": "sha256-vMrm7Pk2hjBRPnCSjhq1pH0bg350Z+pXhqZ9ICiqqCs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fabb8c9deee281e50b1065002c9828f2cf7b2239",
+        "rev": "44bae273f9f82d480273bab26f5c50de3724f52f",
         "type": "github"
       },
       "original": {
@@ -491,6 +514,22 @@
         "owner": "tonymajestro",
         "repo": "smart-scrolloff.nvim",
         "type": "github"
+      }
+    },
+    "spectrum": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1759482047,
+        "narHash": "sha256-H1wiXRQHxxPyMMlP39ce3ROKCwI5/tUn36P8x6dFiiQ=",
+        "ref": "refs/heads/main",
+        "rev": "c5d5786d3dc938af0b279c542d1e43bce381b4b9",
+        "revCount": 996,
+        "type": "git",
+        "url": "https://spectrum-os.org/git/spectrum"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://spectrum-os.org/git/spectrum"
       }
     },
     "systems": {
